@@ -1,0 +1,9 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Tue Apr 04 10:13:05 CEST 2017
+opendj-server-3.0.0.pom>nexus=
+opendj-server-3.0.0.jar>=
+opendj-server-3.0.0.jar>nexus=
+opendj-server-3.0.0-sources.jar>=
+opendj-server-3.0.0.pom>=
+opendj-server-3.0.0-javadoc.jar>forgerock-staging-repository=
+opendj-server-3.0.0-sources.jar>nexus=

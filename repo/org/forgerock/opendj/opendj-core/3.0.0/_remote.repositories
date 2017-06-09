@@ -1,0 +1,10 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Sun Feb 05 09:59:15 CET 2017
+opendj-core-3.0.0.jar>forgerock-staging-repository=
+opendj-core-3.0.0-tests.jar>forgerock-staging-repository=
+opendj-core-3.0.0-sources.jar>nexus=
+opendj-core-3.0.0.jar>nexus=
+opendj-core-3.0.0.pom>nexus=
+opendj-core-3.0.0.pom>forgerock-staging-repository=
+opendj-core-3.0.0-sources.jar>forgerock-staging-repository=
+opendj-core-3.0.0-javadoc.jar>forgerock-staging-repository=

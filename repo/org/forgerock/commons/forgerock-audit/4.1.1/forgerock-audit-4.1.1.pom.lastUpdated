@@ -1,0 +1,9 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Feb 02 16:03:57 CET 2017
+https\://maven.serviceplanet.nl/content/repositories/snapshots/.error=
+http\://download.oracle.com/maven/.error=
+https\://maven.serviceplanet.nl/content/repositories/snapshots/.lastUpdated=1486047836543
+http\://maven.forgerock.org/repo/releases/.lastUpdated=1486047837699
+https\://maven.serviceplanet.nl/content/repositories/thirdparty/.error=
+https\://maven.serviceplanet.nl/content/repositories/thirdparty/.lastUpdated=1486047836556
+http\://download.oracle.com/maven/.lastUpdated=1486047837635

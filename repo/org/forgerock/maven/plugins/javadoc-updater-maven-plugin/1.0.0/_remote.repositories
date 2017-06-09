@@ -1,0 +1,6 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Sun Feb 05 09:59:09 CET 2017
+javadoc-updater-maven-plugin-1.0.0.jar>central=
+javadoc-updater-maven-plugin-1.0.0.pom>central=
+javadoc-updater-maven-plugin-1.0.0.jar>nexus=
+javadoc-updater-maven-plugin-1.0.0.pom>nexus=

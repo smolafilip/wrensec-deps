@@ -1,0 +1,8 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Sun Feb 05 09:59:07 CET 2017
+forgerock-util-3.0.2.jar>forgerock-staging-repository=
+forgerock-util-3.0.2.pom>forgerock-staging-repository=
+forgerock-util-3.0.2-sources.jar>forgerock-staging-repository=
+forgerock-util-3.0.2-javadoc.jar>forgerock-staging-repository=
+forgerock-util-3.0.2.pom>nexus=
+forgerock-util-3.0.2.jar>nexus=

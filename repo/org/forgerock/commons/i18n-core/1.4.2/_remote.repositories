@@ -1,0 +1,9 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Sun Feb 05 09:59:16 CET 2017
+i18n-core-1.4.2.jar>nexus=
+i18n-core-1.4.2-sources.jar>forgerock-staging-repository=
+i18n-core-1.4.2-javadoc.jar>forgerock-staging-repository=
+i18n-core-1.4.2-sources.jar>nexus=
+i18n-core-1.4.2.jar>forgerock-staging-repository=
+i18n-core-1.4.2.pom>nexus=
+i18n-core-1.4.2.pom>forgerock-staging-repository=

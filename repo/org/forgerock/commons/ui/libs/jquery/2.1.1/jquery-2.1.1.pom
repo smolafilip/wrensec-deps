@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.forgerock.commons.ui.libs</groupId>
+  <artifactId>jquery</artifactId>
+  <version>2.1.1</version>
+  <packaging>js</packaging>
+  <description>Artifactory auto generated POM</description>
+  <licenses>
+    <license>
+      <name>MIT</name>
+      <url>https://github.com/jquery/jquery/blob/2.1.1/MIT-LICENSE.txt</url>
+      <distribution>https://github.com/jquery/jquery/tree/2.1.1</distribution>
+      <comments>Copyright 2014 jQuery Foundation and other contributors</comments>
+    </license>
+  </licenses>
+</project>

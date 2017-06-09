@@ -1,0 +1,6 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Mon Feb 06 13:09:45 CET 2017
+jsoneditor-0.7.9.pom>nexus=
+jsoneditor-0.7.9-min.js>nexus=
+jsoneditor-0.7.9-min.js>forgerock-staging-repository=
+jsoneditor-0.7.9.pom>forgerock-staging-repository=

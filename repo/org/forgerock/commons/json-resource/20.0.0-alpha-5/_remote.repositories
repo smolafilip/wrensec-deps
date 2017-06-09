@@ -1,0 +1,9 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Mon Feb 06 13:04:27 CET 2017
+json-resource-20.0.0-alpha-5.pom>nexus=
+json-resource-20.0.0-alpha-5-tests.jar>nexus=
+json-resource-20.0.0-alpha-5.jar>forgerock-staging-repository=
+json-resource-20.0.0-alpha-5.jar>nexus=
+json-resource-20.0.0-alpha-5.pom>forgerock-staging-repository=
+json-resource-20.0.0-alpha-5-tests.jar>forgerock-staging-repository=
+json-resource-20.0.0-alpha-5-sources.jar>nexus=

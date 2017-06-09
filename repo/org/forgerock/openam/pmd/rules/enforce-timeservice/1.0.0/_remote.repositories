@@ -1,0 +1,6 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Mon Feb 06 13:04:01 CET 2017
+enforce-timeservice-1.0.0.jar>central=
+enforce-timeservice-1.0.0.pom>nexus=
+enforce-timeservice-1.0.0.pom>central=
+enforce-timeservice-1.0.0.jar>nexus=

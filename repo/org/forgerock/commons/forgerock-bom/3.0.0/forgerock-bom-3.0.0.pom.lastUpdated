@@ -1,0 +1,15 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Mon Feb 06 13:04:49 CET 2017
+http\://maven.forgerock.org/repo/openam-dependencies/.error=
+http\://download.oracle.com/maven/.error=
+http\://maven.forgerock.org/repo/maven.restlet.org/.error=
+http\://maven.forgerock.org/repo/openam-dependencies/.lastUpdated=1486382688590
+http\://maven.forgerock.org/repo/maven.restlet.org/.lastUpdated=1486382688614
+https\://maven.serviceplanet.nl/content/repositories/snapshots/.error=
+http\://download.oracle.com/maven/.lastUpdated=1486382689047
+http\://maven.forgerock.org/repo/releases/.lastUpdated=1486382689079
+https\://maven.serviceplanet.nl/content/repositories/snapshots/.lastUpdated=1486382688558
+https\://repo.maven.apache.org/maven2/.lastUpdated=1486382689054
+https\://maven.serviceplanet.nl/content/repositories/thirdparty/.lastUpdated=1486382688571
+https\://repo.maven.apache.org/maven2/.error=
+https\://maven.serviceplanet.nl/content/repositories/thirdparty/.error=
