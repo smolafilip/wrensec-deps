@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.forgerock.openicf.connectors</groupId>
+  <artifactId>groovy-connector</artifactId>
+  <version>1.4.2.1</version>
+  <packaging>bundle</packaging>
+  <name>Groovy Connector Toolkit</name>
+  <description>This is a generic bundle that contains base classes and interfaces needed to write a scripted
+        connector, such as Scripted SQL connector.</description>
+  <url>http://openicf.forgerock.org/connectors/groovy-connector/</url>
+  <scm>
+    <connection>scm:git:ssh://git@stash.forgerock.org:7999/openicf/groovy-connector.git</connection>
+    <developerConnection>scm:git:ssh://git@stash.forgerock.org:7999/openicf/groovy-connector.git</developerConnection>
+    <tag>1.4.2.1</tag>
+    <url>http://stash.forgerock.org/projects/OPENICF/repos/groovy-connector/browse</url>
+  </scm>
+  <issueManagement>
+    <system>jira</system>
+    <url>https://bugster.forgerock.org/jira/browse/OPENICF/component/11352</url>
+  </issueManagement>
+  <ciManagement>
+    <system>jenkins</system>
+    <url>https://ci.forgerock.org/view/OpenICF/job/OpenICF - groovy-connector - postcommit/</url>
+  </ciManagement>
+</project>

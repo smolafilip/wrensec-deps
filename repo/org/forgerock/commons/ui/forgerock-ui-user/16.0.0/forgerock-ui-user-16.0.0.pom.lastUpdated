@@ -1,0 +1,10 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Tue Jul 04 12:04:46 CEST 2017
+https\://oss.sonatype.org/content/groups/public/.lastUpdated=1499162686602
+@default-forgerock-internal-http\://maven.forgerock.org/repo/internal/.lastUpdated=1499162685696
+@default-forgerock-staging-repository-http\://maven.forgerock.org/repo/releases/.lastUpdated=1499162685592
+https\://repo.maven.apache.org/maven2/.lastUpdated=1499162686699
+http\://maven.forgerock.org/repo/internal/.error=Could not transfer artifact org.forgerock.commons.ui\:forgerock-ui-user\:pom\:16.0.0 from/to forgerock-internal (http\://maven.forgerock.org/repo/internal)\: Not authorized , ReasonPhrase\:Unauthorized.
+http\://maven.forgerock.org/repo/releases/.error=Could not transfer artifact org.forgerock.commons.ui\:forgerock-ui-user\:pom\:16.0.0 from/to forgerock-staging-repository (http\://maven.forgerock.org/repo/releases)\: Not authorized , ReasonPhrase\:Unauthorized.
+https\://oss.sonatype.org/content/groups/public/.error=
+https\://repo.maven.apache.org/maven2/.error=

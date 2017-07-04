@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.forgerock.commons.ui.libs</groupId>
+  <artifactId>react</artifactId>
+  <version>15.2.1</version>
+  <description>Artifactory auto generated POM</description>
+  <licenses>
+    <license>
+      <name>BSD</name>
+      <url>https://fb.me/react-15.2.1.min.js</url>
+      <distribution>https://fb.me/react-15.2.1.min.js</distribution>
+      <comments>Copyright 2013-present, Facebook, Inc.</comments>
+    </license>
+  </licenses>
+</project>
