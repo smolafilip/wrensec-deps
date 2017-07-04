@@ -1,0 +1,5 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Wed Nov 30 13:24:00 CET 2016
+script-javascript-4.2.0.jar>forgerock-staging-repository=
+script-javascript-4.2.0.pom>forgerock-staging-repository=
+script-javascript-4.2.0-sources.jar>forgerock-staging-repository=

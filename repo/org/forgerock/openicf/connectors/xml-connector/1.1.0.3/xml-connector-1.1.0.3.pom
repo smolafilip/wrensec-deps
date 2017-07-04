@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.forgerock.openicf.connectors</groupId>
+  <artifactId>xml-connector</artifactId>
+  <version>1.1.0.3</version>
+  <packaging>bundle</packaging>
+  <name>Simulated XML Connector</name>
+  <description>Connector can simulate almost any kind of resource.</description>
+  <url>http://openicf.forgerock.org/connectors/xml-connector</url>
+  <scm>
+    <connection>scm:git:ssh://git@stash.forgerock.org:7999/openicf/xml-connector.git</connection>
+    <developerConnection>scm:git:ssh://git@stash.forgerock.org:7999/openicf/xml-connector.git</developerConnection>
+    <tag>1.1.0.3</tag>
+    <url>http://stash.forgerock.org/projects/OPENICF/repos/xml-connector/browse/</url>
+  </scm>
+  <issueManagement>
+    <system>jira</system>
+    <url>https://bugster.forgerock.org/jira/browse/OPENICF/component/10181</url>
+  </issueManagement>
+  <ciManagement>
+    <system>jenkins</system>
+    <url>https://ci.forgerock.org/view/OpenICF/job/OpenICF - xml-connector - postcommit/</url>
+  </ciManagement>
+</project>

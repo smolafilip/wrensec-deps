@@ -1,0 +1,5 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Mon Jun 26 16:19:49 CEST 2017
+@default-forgerock-staging-repository-http\://maven.forgerock.org/repo/releases/.lastUpdated=1498486788508
+https\://dl.bintray.com/kortanul/forgerock-archive/.lastUpdated=1498486789442
+http\://maven.forgerock.org/repo/releases/.error=Could not transfer artifact org.postgresql\:postgresql-fr-osgi\:pom\:9.3-1101-jdbc41 from/to forgerock-staging-repository (http\://maven.forgerock.org/repo/releases)\: Access denied to http\://maven.forgerock.org/repo/releases/org/postgresql/postgresql-fr-osgi/9.3-1101-jdbc41/postgresql-fr-osgi-9.3-1101-jdbc41.pom. Error code 401, Unauthorized

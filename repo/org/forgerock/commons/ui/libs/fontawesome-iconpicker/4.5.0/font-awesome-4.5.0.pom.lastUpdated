@@ -1,0 +1,12 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Mon Jan 02 12:07:52 CET 2017
+https\://oss.sonatype.org/content/groups/public/.error=
+http\://maven.forgerock.org/repo/releases/.error=
+http\://maven.forgerock.org/repo/internal/.error=
+https\://oss.sonatype.org/content/groups/public/.lastUpdated=1483355271964
+http\://maven.forgerock.org/repo/releases/.lastUpdated=1483355271492
+http\://maven.forgerock.org/repo/internal/.lastUpdated=1483355271585
+https\://repo.maven.apache.org/maven2/.lastUpdated=1483355272002
+https\://repo.maven.apache.org/maven2/.error=
+http\://maven.restlet.org/.error=
+http\://maven.restlet.org/.lastUpdated=1478268254045
