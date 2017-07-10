@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.forgerock.commons.ui.libs</groupId>
+  <artifactId>font-awesome</artifactId>
+  <version>4.3.0</version>
+  <packaging>zip</packaging>
+  <description>Artifactory auto generated POM</description>
+<licenses>
+  <license>
+    <name>MIT</name>
+    <url>http://opensource.org/licenses/mit-license.html</url>
+    <distribution>http://fontawesome.io</distribution>
+    <comments>MIT Applies to all CSS and LESS files in the following directories: font-awesome/css/, font-awesome/less/, and font-awesome/scss/. @davegandy - http://fontawesome.io</comments>
+  </license>
+  <license>
+    <name>SIL OFL 1.1</name>
+    <url>http://scripts.sil.org/OFL</url>
+    <distribution>http://fontawesome.io</distribution>
+    <comments>SIL OFL 1.1 Applies to all desktop and webfont files in the following directory: font-awesome/fonts/ @davegandy - http://fontawesome.io</comments>
+  </license>  
+</licenses>
+</project>

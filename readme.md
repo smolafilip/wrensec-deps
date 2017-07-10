@@ -11,6 +11,8 @@ This repository must be seen as a temporary solution to ensure we can build Wren
 `install_wrenam_13_deps.sh` installs dependencies needed to build Wren:AM 13 (`sustaining/13` branch) into the user's local maven repository (`~/.m2/repository`).
 **WARNING: This script does not yet install all dependencies needed to do a full Wren:AM 13 build!** It will currently get you about 70% of the entire Wren:AM 13 build.
 
+`install_openidm_4.0.2_deps.sh` installs dependencies needed to build Wren:IDM 4.0.2 into the user's local maven repository (`~/.m2/repository`).
+
 `install_openidm_5.0.0_deps.sh` installs dependencies needed to build Wren:IDM 5.0.0 into the user's local maven repository (`~/.m2/repository`).
 
 `install_openidm_5.5.0_deps.sh` installs dependencies needed to build Wren:IDM 5.5.0 into the user's local maven repository (`~/.m2/repository`).

@@ -18,7 +18,7 @@
 #
 
 # This script installs all the dependencies required to successfully build
-# wrensec:openidm 5.5.0 in the user's local Maven repo.
+# Wren:IDM 5.5.0 in the user's local Maven repo.
 
 # Stop on any error we encounter.
 set -e

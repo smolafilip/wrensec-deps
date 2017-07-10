@@ -18,7 +18,7 @@
 #
 
 # This script installs all the dependencies required to successfully build
-# wrensec:openidm 5.0.0 in the user's local Maven repo.
+# Wren:IDM 5.0.0 in the user's local Maven repo.
 
 # Stop on any error we encounter.
 set -e
@@ -95,6 +95,10 @@ function install_pom() {
 install_artifact_plain "org/forgerock/cddl-license/1.0.0/cddl-license-1.0.0.txt" "org.forgerock" "cddl-license" "1.0.0" "txt"
 
 # POM files
+install_pom "org/forgerock/commons/commons-parent/21.0.0-alpha-23/commons-parent-21.0.0-alpha-23.pom"
+install_pom "org/forgerock/commons/commons-bom/21.0.0-alpha-12/commons-bom-21.0.0-alpha-12.pom"
+install_pom "org/forgerock/commons/commons-bom/21.0.0-alpha-23/commons-bom-21.0.0-alpha-23.pom"
+install_pom "org/forgerock/commons/commons-bom/21.0.0-alpha-17/commons-bom-21.0.0-alpha-17.pom"
 install_pom "org/forgerock/forgerock-parent/2.0.4/forgerock-parent-2.0.4.pom"
 install_pom "org/forgerock/forgerock-parent/2.0.10/forgerock-parent-2.0.10.pom"
 install_pom "org/forgerock/forgerock-parent/2.0.3/forgerock-parent-2.0.3.pom"
@@ -119,12 +123,8 @@ install_pom "org/forgerock/commons/i18n-framework/1.4.1/i18n-framework-1.4.1.pom
 install_pom "org/forgerock/commons/guava/forgerock-guava/18.0.4/forgerock-guava-18.0.4.pom"
 install_pom "org/forgerock/commons/forgerock-utilities/21.0.0-alpha-23/forgerock-utilities-21.0.0-alpha-23.pom"
 install_pom "org/forgerock/commons/json-schema/21.0.0-alpha-23/json-schema-21.0.0-alpha-23.pom"
-install_pom "org/forgerock/commons/commons-bom/21.0.0-alpha-12/commons-bom-21.0.0-alpha-12.pom"
-install_pom "org/forgerock/commons/commons-bom/21.0.0-alpha-23/commons-bom-21.0.0-alpha-23.pom"
-install_pom "org/forgerock/commons/commons-bom/21.0.0-alpha-17/commons-bom-21.0.0-alpha-17.pom"
 install_pom "org/forgerock/http/forgerock-http-framework-parent/21.0.0-alpha-23/forgerock-http-framework-parent-21.0.0-alpha-23.pom"
 install_pom "org/forgerock/commons/ui/forgerock-ui/15.2.4/forgerock-ui-15.2.4.pom"
-install_pom "org/forgerock/commons/commons-parent/21.0.0-alpha-23/commons-parent-21.0.0-alpha-23.pom"
 install_pom "org/forgerock/commons/forgerock-auth-filters/21.0.0-alpha-23/forgerock-auth-filters-21.0.0-alpha-23.pom"
 
 # JAR files

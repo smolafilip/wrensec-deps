@@ -1,0 +1,5 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Mon Jun 06 14:58:58 CEST 2016
+connector-framework-1.4.1.0.jar>forgerock-staging-repository=
+connector-framework-1.4.1.0-sources.jar>forgerock-staging-repository=
+connector-framework-1.4.1.0.pom>forgerock-staging-repository=

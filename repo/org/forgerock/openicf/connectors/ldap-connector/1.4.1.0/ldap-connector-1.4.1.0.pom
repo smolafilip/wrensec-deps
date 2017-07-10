@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.forgerock.openicf.connectors</groupId>
+  <artifactId>ldap-connector</artifactId>
+  <version>1.4.1.0</version>
+  <packaging>bundle</packaging>
+  <name>Generic JNDI based LDAP Connector</name>
+  <description>Connector for Sun DSEE and OpenDJ and Generic LDAP</description>
+  <url>http://openicf.forgerock.org/connectors/ldap-connector/</url>
+  <scm>
+    <connection>scm:git:ssh://git@stash.forgerock.org:7999/openicf/ldap-connector.git</connection>
+    <developerConnection>scm:git:ssh://git@stash.forgerock.org:7999/openicf/ldap-connector.git</developerConnection>
+    <tag>1.4.1.0</tag>
+    <url>http://stash.forgerock.org/projects/OPENICF/repos/ldap-connector/browse</url>
+  </scm>
+  <issueManagement>
+    <system>jira</system>
+    <url>https://bugster.forgerock.org/jira/browse/OPENICF/component/10182</url>
+  </issueManagement>
+  <ciManagement>
+    <system>jenkins</system>
+    <url>https://ci.forgerock.org/view/OpenICF/job/OpenICF - ldap-connector - postcommit/</url>
+  </ciManagement>
+</project>
