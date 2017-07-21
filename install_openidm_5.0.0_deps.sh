@@ -124,7 +124,7 @@ install_pom "org/forgerock/commons/guava/forgerock-guava/18.0.4/forgerock-guava-
 install_pom "org/forgerock/commons/forgerock-utilities/21.0.0-alpha-23/forgerock-utilities-21.0.0-alpha-23.pom"
 install_pom "org/forgerock/commons/json-schema/21.0.0-alpha-23/json-schema-21.0.0-alpha-23.pom"
 install_pom "org/forgerock/http/forgerock-http-framework-parent/21.0.0-alpha-23/forgerock-http-framework-parent-21.0.0-alpha-23.pom"
-install_pom "org/forgerock/commons/ui/forgerock-ui/15.2.4/forgerock-ui-15.2.4.pom"
+install_pom "org/forgerock/commons/ui/forgerock-ui/16.0.0/forgerock-ui-16.0.0.pom"
 install_pom "org/forgerock/commons/forgerock-auth-filters/21.0.0-alpha-23/forgerock-auth-filters-21.0.0-alpha-23.pom"
 
 # JAR files
@@ -267,10 +267,10 @@ install_artifact "org/forgerock/commons/ui/libs/backbone/1.1.2/backbone-1.1.2" "
 # Zip files
 install_artifact "org/forgerock/openicf/connectors/groovy-connector/1.4.2.1/groovy-connector-1.4.2.1" "zip" "samples"
 install_artifact "org/forgerock/commons/launcher-zip/2.0.4/launcher-zip-2.0.4" "zip"
-install_artifact "org/forgerock/commons/ui/forgerock-ui-user/15.2.4/forgerock-ui-user-15.2.4" "zip" "www"
+install_artifact "org/forgerock/commons/ui/forgerock-ui-user/16.0.0/forgerock-ui-user-16.0.0" "zip" "www"
 install_artifact "org/forgerock/commons/ui/libs/CodeMirror/4.10/CodeMirror-4.10" "zip"
 install_artifact "org/forgerock/commons/ui/libs/font-awesome/4.5.0/font-awesome-4.5.0" "zip"
-install_artifact "org/forgerock/commons/ui/forgerock-ui-commons/15.2.4/forgerock-ui-commons-15.2.4" "zip" "www"
+install_artifact "org/forgerock/commons/ui/forgerock-ui-commons/16.0.0/forgerock-ui-commons-16.0.0" "zip" "www"
 
 # Less files
 install_artifact "org/forgerock/commons/ui/libs/backgrid.min/0.3.5/backgrid.min-0.3.5" "less"
