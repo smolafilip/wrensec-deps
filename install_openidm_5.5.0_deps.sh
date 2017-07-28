@@ -20,76 +20,10 @@
 # This script installs all the dependencies required to successfully build
 # Wren:IDM 5.5.0 in the user's local Maven repo.
 
-# Stop on any error we encounter.
-set -e
-
-# Installs an Maven artifact in the users local Maven repository (~/.m2/repository)
-# without a POM. Only groupid, artifactid and version will be set. All dependency
-# information will be lost. 
-#
-# Use 'install_artifact' instead if you have a POM.
-function install_artifact_plain() {
-  ARTIFACT_FILE=$1
-  GROUP_ID=$2
-  ARTIFACT_ID=$3
-  VERSION=$4
-  PACKAGING=$5
-  
-  mvn install:install-file -Dfile="repo/${ARTIFACT_FILE}" -DgroupId=${GROUP_ID} -DartifactId=${ARTIFACT_ID} -Dversion=${VERSION} -Dpackaging=${PACKAGING} -DcreateChecksum=true
-}
-
-# Install an artifact (usually a JAR) together with it's POM.
-# Arguments:
-# 1 -> Base file name
-#
-# Optionally the following arguments can be supplied.
-# 2 -> Extension of artifact. When empty JAR is used.
-# 3 -> Classifier of artifact. When empty no classifier is used.
-function install_artifact() {
-  BASE_FILE=$1
-  
-  # We force the packaging type to 'jar' because some artifacts have a packaging type of 'bundle'
-  # specified in their POM. When installed as bundle in the repo Maven can't find the artifact.
-  ARTIFACT_EXTENSION="jar"
-  ARTIFACT_CLASSIFIER=""
-  
-  MVN_CMD="mvn install:install-file -DpomFile="repo/${BASE_FILE}.pom" -DcreateChecksum=true"
-  
-  if [ ! -z  "$2" ]; then
-    ARTIFACT_EXTENSION="$2"
-        
-    if [ ! -z  "$3" ]; then 
-      ARTIFACT_CLASSIFIER="$3"
-      MVN_CMD="${MVN_CMD} -Dfile=repo/${BASE_FILE}-${ARTIFACT_CLASSIFIER}.${ARTIFACT_EXTENSION} -Dclassifier=${ARTIFACT_CLASSIFIER}"
-    else 
-      MVN_CMD="${MVN_CMD} -Dfile=repo/${BASE_FILE}.${ARTIFACT_EXTENSION}"
-    fi
-    
-  else
-    MVN_CMD="${MVN_CMD} -Dfile=repo/${BASE_FILE}.${ARTIFACT_EXTENSION}"
-  fi
-    
-  MVN_CMD="${MVN_CMD} -Dpackaging=${ARTIFACT_EXTENSION}"
-
-  ${MVN_CMD}
-  
-  # Install tests if present (for example 'json-resource' needs this).
-  if [ -f "repo/${BASE_FILE}-tests.jar" ]; then
-    mvn install:install-file -Dfile="repo/${BASE_FILE}-tests.jar" -DpomFile="repo/${BASE_FILE}.pom" -Dpackaging=jar -Dclassifier=tests -DcreateChecksum=true
-  fi
-  
-  # Install sources if present.
-  if [ -f "repo/${BASE_FILE}-sources.jar" ]; then
-    mvn install:install-file -Dfile="repo/${BASE_FILE}-sources.jar" -DpomFile="repo/${BASE_FILE}.pom" -Dpackaging=jar -Dclassifier=sources -DcreateChecksum=true
-  fi
-}
-
-# Installs a POM without artifact into the users local Maven repository.
-function install_pom() {
-  POM_FILE=$1
-  
-  mvn install:install-file -Dfile="repo/${POM_FILE}" -DpomFile="repo/${POM_FILE}" -DcreateChecksum=true
-}
+#Include the commands
+DIR="${BASH_SOURCE%/*}"
+if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
+. "$DIR/install_commands.sh"
 
 # Various
 install_artifact_plain "org/forgerock/cddl-license/1.0.0/cddl-license-1.0.0.txt" "org.forgerock" "cddl-license" "1.0.0" "txt"
