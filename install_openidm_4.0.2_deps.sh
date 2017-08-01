@@ -14,89 +14,16 @@
 # information: "Portions copyright [year] [name of copyright owner]".
 #
 # Portions copyright 2017 Jasper Siepkes
-# Portions copyright 2017 Filip Smola
+# Portions copyright 2017 Orchitech Solutions s.r.o.
 #
 
 # This script installs all the dependencies required to successfully build
 # Wren:IDM 4.0.2 in the user's local Maven repo.
 
-# Stop on any error we encounter.
-set -e
-
-# Installs an Maven artifact in the users local Maven repository (~/.m2/repository)
-# without a POM. Only groupid, artifactid and version will be set. All dependency
-# information will be lost. 
-# Optionally can have classifier as 6th argument
-#
-# Use 'install_artifact' instead if you have a POM.
-function install_artifact_plain() {
-  ARTIFACT_FILE=$1
-  GROUP_ID=$2
-  ARTIFACT_ID=$3
-  VERSION=$4
-  PACKAGING=$5
-  
-  # Handle optional classifier
-  if [ ! -z "$6" ]; then
-    CLASSIFIER=$6
-    mvn install:install-file -Dfile="repo/${ARTIFACT_FILE}" -DgroupId=${GROUP_ID} -DartifactId=${ARTIFACT_ID} -Dversion=${VERSION} -Dpackaging=${PACKAGING} -Dclassifier=${CLASSIFIER} -DcreateChecksum=true
-  else
-    mvn install:install-file -Dfile="repo/${ARTIFACT_FILE}" -DgroupId=${GROUP_ID} -DartifactId=${ARTIFACT_ID} -Dversion=${VERSION} -Dpackaging=${PACKAGING} -DcreateChecksum=true
-  fi
-}
-
-# Install an artifact (usually a JAR) together with it's POM.
-# Arguments:
-# 1 -> Base file name
-#
-# Optionally the following arguments can be supplied.
-# 2 -> Extension of artifact. When empty JAR is used.
-# 3 -> Classifier of artifact. When empty no classifier is used.
-function install_artifact() {
-  BASE_FILE=$1
-  
-  # We force the packaging type to 'jar' because some artifacts have a packaging type of 'bundle'
-  # specified in their POM. When installed as bundle in the repo Maven can't find the artifact.
-  ARTIFACT_EXTENSION="jar"
-  ARTIFACT_CLASSIFIER=""
-  
-  MVN_CMD="mvn install:install-file -DpomFile="repo/${BASE_FILE}.pom" -DcreateChecksum=true"
-  
-  if [ ! -z  "$2" ]; then
-    ARTIFACT_EXTENSION="$2"
-        
-    if [ ! -z  "$3" ]; then 
-      ARTIFACT_CLASSIFIER="$3"
-      MVN_CMD="${MVN_CMD} -Dfile=repo/${BASE_FILE}-${ARTIFACT_CLASSIFIER}.${ARTIFACT_EXTENSION} -Dclassifier=${ARTIFACT_CLASSIFIER}"
-    else 
-      MVN_CMD="${MVN_CMD} -Dfile=repo/${BASE_FILE}.${ARTIFACT_EXTENSION}"
-    fi
-    
-  else
-    MVN_CMD="${MVN_CMD} -Dfile=repo/${BASE_FILE}.${ARTIFACT_EXTENSION}"
-  fi
-    
-  MVN_CMD="${MVN_CMD} -Dpackaging=${ARTIFACT_EXTENSION}"
-
-  ${MVN_CMD}
-  
-  # Install tests if present (for example 'json-resource' needs this).
-  if [ -f "repo/${BASE_FILE}-tests.jar" ]; then
-    mvn install:install-file -Dfile="repo/${BASE_FILE}-tests.jar" -DpomFile="repo/${BASE_FILE}.pom" -Dpackaging=jar -Dclassifier=tests -DcreateChecksum=true
-  fi
-  
-  # Install sources if present.
-  if [ -f "repo/${BASE_FILE}-sources.jar" ]; then
-    mvn install:install-file -Dfile="repo/${BASE_FILE}-sources.jar" -DpomFile="repo/${BASE_FILE}.pom" -Dpackaging=jar -Dclassifier=sources -DcreateChecksum=true
-  fi
-}
-
-# Installs a POM without artifact into the users local Maven repository.
-function install_pom() {
-  POM_FILE=$1
-  
-  mvn install:install-file -Dfile="repo/${POM_FILE}" -DpomFile="repo/${POM_FILE}" -DcreateChecksum=true
-}
+#Include the commands
+DIR="${BASH_SOURCE%/*}"
+if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
+. "$DIR/install_commands.sh"
 
 # Various
 install_artifact_plain "org/forgerock/cddl-license/1.0.0/cddl-license-1.0.0.txt" "org.forgerock" "cddl-license" "1.0.0" "txt"
@@ -223,7 +150,6 @@ install_artifact "org/forgerock/commons/ui/libs/titatoggle/1.2.6/titatoggle-1.2.
 install_artifact "org/forgerock/commons/ui/libs/backgrid-filter.min/0.3.5/backgrid-filter.min-0.3.5" "css"
 install_artifact "org/forgerock/commons/ui/libs/dragula/3.6.7/dragula-3.6.7" "css" "min"
 install_artifact "org/forgerock/commons/ui/libs/bootstrap-dialog/1.34.4/bootstrap-dialog-1.34.4" "css" "min"
-install_artifact "org/forgerock/commons/ui/libs/xdate/1.2.6/titatoggle-1.2.6" "css" "min"
 install_artifact "org/forgerock/commons/ui/libs/selectize/0.12.1/selectize-0.12.1" "css" "bootstrap3"
 install_artifact "org/forgerock/commons/ui/libs/bootstrap/3.3.5/bootstrap-3.3.5" "css" "custom"
 install_artifact "org/forgerock/commons/ui/libs/backgrid-filter/0.3.5/backgrid-filter.min-0.3.5" "css"
@@ -235,7 +161,6 @@ install_artifact "org/forgerock/commons/ui/libs/qunit/1.15.0/qunit-1.15.0" "js"
 install_artifact "org/forgerock/commons/ui/libs/bootstrap/3.3.5/bootstrap-3.3.5" "js" "custom"
 install_artifact "org/forgerock/commons/ui/libs/form2js/2.0/form2js-2.0" "js"
 install_artifact "org/forgerock/commons/ui/libs/less/1.5.1/less-1.5.1" "js" "rhino"
-install_artifact "org/forgerock/commons/ui/libs/handlebars/3.0.3/handlebars-3.0.3" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/handlebars/4.0.5/handlebars-4.0.5" "js"
 install_artifact "org/forgerock/commons/ui/libs/jquery.placeholder/2.0.8/jquery.placeholder-2.0.8" "js"
 install_artifact "org/forgerock/commons/ui/libs/js2form/2.0/js2form-2.0" "js"
@@ -244,6 +169,7 @@ install_artifact "org/forgerock/commons/ui/libs/r/2.1.10/r-2.1.10" "js"
 install_artifact "org/forgerock/commons/ui/libs/jquery-nestingSortable/0.9.12/jquery-nestingSortable-0.9.12" "js"
 
 # Minimised Js files
+install_artifact "org/forgerock/commons/ui/libs/handlebars/3.0.3/handlebars-3.0.3" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/backgrid.min/0.3.5/backgrid.min-0.3.5" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/lodash/2.4.1/lodash-2.4.1" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/lodash/3.10.1/lodash-3.10.1" "js" "min"
@@ -263,7 +189,6 @@ install_artifact "org/forgerock/commons/ui/libs/ldapjs-filter/2253/ldapjs-filter
 install_artifact "org/forgerock/commons/ui/libs/bootstrap-datetimepicker/4.14.30/bootstrap-datetimepicker-4.14.30" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/jquery.ba-dotimeout/1.0/jquery.ba-dotimeout-1.0" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/jquery-ui/1.11.1/jquery-ui-1.11.1" "js" "min"
-install_artifact "org/forgerock/commons/ui/libs/xdate/2.0.1/spin-2.0.1" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/xdate/0.8/xdate-0.8" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/moment/2.8.1/moment-2.8.1" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/selectize/0.12.1/selectize-0.12.1" "js" "min"
@@ -273,7 +198,6 @@ install_artifact "org/forgerock/commons/ui/libs/backgrid-paginator.min/0.3.5/bac
 install_artifact "org/forgerock/commons/ui/libs/contentflow/1.0.2/contentflow-1.0.2" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/backbone.paginator.min/2.0.2/backbone.paginator.min-2.0.2" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/spin/2.0.1/spin-2.0.1" "js" "min"
-install_artifact "org/forgerock/commons/ui/libs/titatoggle/2.0.1/spin-2.0.1" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/dragula/3.6.7/dragula-3.6.7" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/backgrid-filter.min/0.3.5/backgrid-filter.min-0.3.5" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/react/15.2.1/react-15.2.1" "js" "min"

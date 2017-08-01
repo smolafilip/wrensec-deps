@@ -14,81 +14,16 @@
 # information: "Portions copyright [year] [name of copyright owner]".
 #
 # Portions copyright 2017 Jasper Siepkes
+# Portions copyright 2017 Orchitech Solutions s.r.o.
 #
 
 # This script installs all the dependencies required to successfully build
 # wren:am 13 (sustaining/13 branch) in the users local Maven repo.
 
-# Stop on any error we encounter.
-set -e
-
-# Installs an Maven artifact in the users local Maven repository (~/.m2/repository)
-# without a POM. Only groupid, artifactid and version will be set. All dependency
-# information will be lost. 
-#
-# Use 'install_artifact' instead if you have a POM.
-function install_artifact_plain() {
-  ARTIFACT_FILE=$1
-  GROUP_ID=$2
-  ARTIFACT_ID=$3
-  VERSION=$4
-  PACKAGING=$5
-  
-  mvn install:install-file -Dfile="repo/${ARTIFACT_FILE}" -DgroupId=${GROUP_ID} -DartifactId=${ARTIFACT_ID} -Dversion=${VERSION} -Dpackaging=${PACKAGING} -DcreateChecksum=true
-}
-
-# Install an artifact (usually a JAR) together with it's POM.
-# Arguments:
-# 1 -> Base file name
-#
-# Optionally the following arguments can be supplied.
-# 2 -> Extension of artifact. When empty JAR is used.
-# 3 -> Classifier of artifact. When empty no classifier is used.
-function install_artifact() {
-  BASE_FILE=$1
-  
-  # We force the packaging type to 'jar' because some artifacts have a packaging type of 'bundle'
-  # specified in their POM. When installed as bundle in the repo Maven can't find the artifact.
-  ARTIFACT_EXTENSION="jar"
-  ARTIFACT_CLASSIFIER=""
-  
-  MVN_CMD="mvn install:install-file -DpomFile="repo/${BASE_FILE}.pom" -DcreateChecksum=true"
-  
-  if [ ! -z  "$2" ]; then
-    ARTIFACT_EXTENSION="$2"
-        
-    if [ ! -z  "$3" ]; then 
-      ARTIFACT_CLASSIFIER="$3"
-      MVN_CMD="${MVN_CMD} -Dfile=repo/${BASE_FILE}-${ARTIFACT_CLASSIFIER}.${ARTIFACT_EXTENSION} -Dclassifier=${ARTIFACT_CLASSIFIER}"
-    else 
-      MVN_CMD="${MVN_CMD} -Dfile=repo/${BASE_FILE}.${ARTIFACT_EXTENSION}"
-    fi
-    
-  else
-    MVN_CMD="${MVN_CMD} -Dfile=repo/${BASE_FILE}.${ARTIFACT_EXTENSION}"
-  fi
-    
-  MVN_CMD="${MVN_CMD} -Dpackaging=${ARTIFACT_EXTENSION}"
-
-  ${MVN_CMD}
-  
-  # Install tests if present (for example 'json-resource' needs this).
-  if [ -f "repo/${BASE_FILE}-tests.jar" ]; then
-    mvn install:install-file -Dfile="repo/${BASE_FILE}-tests.jar" -DpomFile="repo/${BASE_FILE}.pom" -Dpackaging=jar -Dclassifier=tests -DcreateChecksum=true
-  fi
-  
-  # Install sources if present.
-  if [ -f "repo/${BASE_FILE}-sources.jar" ]; then
-    mvn install:install-file -Dfile="repo/${BASE_FILE}-sources.jar" -DpomFile="repo/${BASE_FILE}.pom" -Dpackaging=jar -Dclassifier=sources -DcreateChecksum=true
-  fi
-}
-
-# Installs a POM without artifact into the users local Maven repository.
-function install_pom() {
-  POM_FILE=$1
-  
-  mvn install:install-file -Dfile="repo/${POM_FILE}" -DpomFile="repo/${POM_FILE}" -DcreateChecksum=true
-}
+#Include the commands
+DIR="${BASH_SOURCE%/*}"
+if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
+. "$DIR/install_commands.sh"
 
 # Various
 install_artifact_plain "org/forgerock/cddl-license/1.0.0/cddl-license-1.0.0.txt" "org.forgerock" "cddl-license" "1.0.0" "txt"
@@ -108,19 +43,24 @@ install_pom "org/forgerock/forgerock-parent/1.2.9/forgerock-parent-1.2.9.pom"
 install_pom "org/forgerock/commons/forgerock-bom/3.0.0/forgerock-bom-3.0.0.pom"
 install_pom "org/forgerock/commons/forgerock-bom/4.0.0/forgerock-bom-4.0.0.pom"
 install_pom "org/forgerock/commons/forgerock-bom/4.1.1/forgerock-bom-4.1.1.pom"
+install_pom "org/forgerock/commons/forgerock-utilities/3.0.1/forgerock-utilities-3.0.1.pom"
 install_pom "org/forgerock/commons/forgerock-utilities/3.0.2/forgerock-utilities-3.0.2.pom"
 install_pom "org/forgerock/commons/forgerock-audit/4.1.1/forgerock-audit-4.1.1.pom"
 install_pom "org/forgerock/commons/forgerock-rest/4.0.3/forgerock-rest-4.0.3.pom"
 install_pom "org/forgerock/commons/i18n-framework/1.4.1/i18n-framework-1.4.1.pom"
 install_pom "org/forgerock/http/forgerock-http-framework-parent/3.0.1/forgerock-http-framework-parent-3.0.1.pom"
+install_pom "org/forgerock/http/forgerock-http-framework/3.0.0/forgerock-http-framework-3.0.0.pom"
 install_pom "org/forgerock/commons/forgerock-guice/1.1.0/forgerock-guice-1.1.0.pom"
 install_pom "org/forgerock/commons/forgerock-bom/1.0.0/forgerock-bom-1.0.0.pom"
 install_pom "org/forgerock/commons/i18n-framework/1.4.2/i18n-framework-1.4.2.pom"
 install_pom "org/forgerock/commons/forgerock-authn-filter/3.1.5/forgerock-authn-filter-3.1.5.pom"
 install_pom "org/forgerock/commons/forgerock-jaspi-modules/3.1.5/forgerock-jaspi-modules-3.1.5.pom"
+install_pom "org/forgerock/commons/ui/forgerock-ui/11.0.13/forgerock-ui-11.0.13.pom"
+install_pom "org/forgerock/commons/ui/forgerock-ui-mock/11.0.13/forgerock-ui-mock-11.0.13.pom"
 
 # No source JAR
 install_artifact "org/forgerock/forgerock-build-tools/1.0.3/forgerock-build-tools-1.0.3"
+install_artifact "org/forgerock/commons/forgerock-test-utils/3.0.1/forgerock-test-utils-3.0.1"
 install_artifact "org/forgerock/commons/forgerock-test-utils/3.0.2/forgerock-test-utils-3.0.2"
 install_artifact "org/forgerock/commons/json-web-token/3.0.2/json-web-token-3.0.2"
 install_artifact "org/forgerock/commons/forgerock-jaspi-openid-connect-module/3.1.5/forgerock-jaspi-openid-connect-module-3.1.5"
@@ -139,14 +79,17 @@ install_artifact "org/forgerock/commons/authz-framework-api/3.1.5/authz-framewor
 install_artifact "org/forgerock/commons/forgerock-persistit-core/4.3.1/forgerock-persistit-core-4.3.1"
 install_artifact "org/forgerock/commons/forgerock-bloomfilter-core/1.0.1/forgerock-bloomfilter-core-1.0.1"
 install_artifact "org/forgerock/commons/forgerock-bloomfilter-monitoring/1.0.1/forgerock-bloomfilter-monitoring-1.0.1"
+install_artifact "org/forgerock/commons/forgerock-util/3.0.1/forgerock-util-3.0.1"
 install_artifact "org/forgerock/commons/forgerock-util/3.0.2/forgerock-util-3.0.2"
 install_artifact "org/forgerock/commons/forgerock-audit-core/4.1.1/forgerock-audit-core-4.1.1"
 install_artifact "org/forgerock/commons/i18n-core/1.4.1/i18n-core-1.4.1" # No source of 1.4.1 but 1.4.2 does have source JAR.
+install_artifact "org/forgerock/http/chf-http-core/3.0.0/chf-http-core-3.0.0"
 install_artifact "org/forgerock/http/chf-http-core/3.0.1/chf-http-core-3.0.1"
 install_artifact "org/forgerock/http/chf-http-servlet/3.0.1/chf-http-servlet-3.0.1"
 install_artifact "org/forgerock/http/chf-client-apache-sync/3.0.1/chf-client-apache-sync-3.0.1"
 install_artifact "org/forgerock/http/chf-client-apache-common/3.0.1/chf-client-apache-common-3.0.1"
 install_artifact "org/forgerock/commons/forgerock-guice-core/1.1.0/forgerock-guice-core-1.1.0"
+install_artifact "org/forgerock/commons/forgerock-guice-servlet/1.1.0/forgerock-guice-servlet-1.1.0"
 install_artifact "org/forgerock/commons/json-resource-http/4.0.3/json-resource-http-4.0.3" 
 install_artifact "org/forgerock/commons/i18n-core/1.4.2/i18n-core-1.4.2"
 install_artifact "org/forgerock/commons/i18n-slf4j/1.4.2/i18n-slf4j-1.4.2"
@@ -190,3 +133,7 @@ install_artifact "org/forgerock/commons/guava/forgerock-guava-net/18.0.3/forgero
 install_artifact "org/forgerock/commons/guava/forgerock-guava-primitives/18.0.3/forgerock-guava-primitives-18.0.3"
 install_artifact "org/forgerock/commons/guava/forgerock-guava-reflect/18.0.3/forgerock-guava-reflect-18.0.3"
 
+
+# Zip files
+install_artifact "org/forgerock/commons/ui/forgerock-ui-commons/11.0.13/forgerock-ui-commons-11.0.13" "zip" "www"
+install_artifact "org/forgerock/commons/ui/forgerock-ui-user/11.0.13/forgerock-ui-user-11.0.13" "zip" "www"
