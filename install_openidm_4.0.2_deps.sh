@@ -14,7 +14,7 @@
 # information: "Portions copyright [year] [name of copyright owner]".
 #
 # Portions copyright 2017 Jasper Siepkes
-# Portions copyright 2017 Filip Smola
+# Portions copyright 2017 Orchitech Solutions s.r.o.
 #
 
 # This script installs all the dependencies required to successfully build
@@ -150,7 +150,6 @@ install_artifact "org/forgerock/commons/ui/libs/titatoggle/1.2.6/titatoggle-1.2.
 install_artifact "org/forgerock/commons/ui/libs/backgrid-filter.min/0.3.5/backgrid-filter.min-0.3.5" "css"
 install_artifact "org/forgerock/commons/ui/libs/dragula/3.6.7/dragula-3.6.7" "css" "min"
 install_artifact "org/forgerock/commons/ui/libs/bootstrap-dialog/1.34.4/bootstrap-dialog-1.34.4" "css" "min"
-install_artifact "org/forgerock/commons/ui/libs/xdate/1.2.6/titatoggle-1.2.6" "css" "min"
 install_artifact "org/forgerock/commons/ui/libs/selectize/0.12.1/selectize-0.12.1" "css" "bootstrap3"
 install_artifact "org/forgerock/commons/ui/libs/bootstrap/3.3.5/bootstrap-3.3.5" "css" "custom"
 install_artifact "org/forgerock/commons/ui/libs/backgrid-filter/0.3.5/backgrid-filter.min-0.3.5" "css"
@@ -162,7 +161,6 @@ install_artifact "org/forgerock/commons/ui/libs/qunit/1.15.0/qunit-1.15.0" "js"
 install_artifact "org/forgerock/commons/ui/libs/bootstrap/3.3.5/bootstrap-3.3.5" "js" "custom"
 install_artifact "org/forgerock/commons/ui/libs/form2js/2.0/form2js-2.0" "js"
 install_artifact "org/forgerock/commons/ui/libs/less/1.5.1/less-1.5.1" "js" "rhino"
-install_artifact "org/forgerock/commons/ui/libs/handlebars/3.0.3/handlebars-3.0.3" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/handlebars/4.0.5/handlebars-4.0.5" "js"
 install_artifact "org/forgerock/commons/ui/libs/jquery.placeholder/2.0.8/jquery.placeholder-2.0.8" "js"
 install_artifact "org/forgerock/commons/ui/libs/js2form/2.0/js2form-2.0" "js"
@@ -171,6 +169,7 @@ install_artifact "org/forgerock/commons/ui/libs/r/2.1.10/r-2.1.10" "js"
 install_artifact "org/forgerock/commons/ui/libs/jquery-nestingSortable/0.9.12/jquery-nestingSortable-0.9.12" "js"
 
 # Minimised Js files
+install_artifact "org/forgerock/commons/ui/libs/handlebars/3.0.3/handlebars-3.0.3" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/backgrid.min/0.3.5/backgrid.min-0.3.5" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/lodash/2.4.1/lodash-2.4.1" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/lodash/3.10.1/lodash-3.10.1" "js" "min"
@@ -190,7 +189,6 @@ install_artifact "org/forgerock/commons/ui/libs/ldapjs-filter/2253/ldapjs-filter
 install_artifact "org/forgerock/commons/ui/libs/bootstrap-datetimepicker/4.14.30/bootstrap-datetimepicker-4.14.30" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/jquery.ba-dotimeout/1.0/jquery.ba-dotimeout-1.0" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/jquery-ui/1.11.1/jquery-ui-1.11.1" "js" "min"
-install_artifact "org/forgerock/commons/ui/libs/xdate/2.0.1/spin-2.0.1" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/xdate/0.8/xdate-0.8" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/moment/2.8.1/moment-2.8.1" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/selectize/0.12.1/selectize-0.12.1" "js" "min"
@@ -200,7 +198,6 @@ install_artifact "org/forgerock/commons/ui/libs/backgrid-paginator.min/0.3.5/bac
 install_artifact "org/forgerock/commons/ui/libs/contentflow/1.0.2/contentflow-1.0.2" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/backbone.paginator.min/2.0.2/backbone.paginator.min-2.0.2" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/spin/2.0.1/spin-2.0.1" "js" "min"
-install_artifact "org/forgerock/commons/ui/libs/titatoggle/2.0.1/spin-2.0.1" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/dragula/3.6.7/dragula-3.6.7" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/backgrid-filter.min/0.3.5/backgrid-filter.min-0.3.5" "js" "min"
 install_artifact "org/forgerock/commons/ui/libs/react/15.2.1/react-15.2.1" "js" "min"

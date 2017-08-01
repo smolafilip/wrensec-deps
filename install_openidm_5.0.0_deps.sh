@@ -14,7 +14,7 @@
 # information: "Portions copyright [year] [name of copyright owner]".
 #
 # Portions copyright 2017 Jasper Siepkes
-# Portions copyright 2017 Filip Smola
+# Portions copyright 2017 Orchitech Solutions s.r.o.
 #
 
 # This script installs all the dependencies required to successfully build

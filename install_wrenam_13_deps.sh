@@ -14,6 +14,7 @@
 # information: "Portions copyright [year] [name of copyright owner]".
 #
 # Portions copyright 2017 Jasper Siepkes
+# Portions copyright 2017 Orchitech Solutions s.r.o.
 #
 
 # This script installs all the dependencies required to successfully build
@@ -42,19 +43,24 @@ install_pom "org/forgerock/forgerock-parent/1.2.9/forgerock-parent-1.2.9.pom"
 install_pom "org/forgerock/commons/forgerock-bom/3.0.0/forgerock-bom-3.0.0.pom"
 install_pom "org/forgerock/commons/forgerock-bom/4.0.0/forgerock-bom-4.0.0.pom"
 install_pom "org/forgerock/commons/forgerock-bom/4.1.1/forgerock-bom-4.1.1.pom"
+install_pom "org/forgerock/commons/forgerock-utilities/3.0.1/forgerock-utilities-3.0.1.pom"
 install_pom "org/forgerock/commons/forgerock-utilities/3.0.2/forgerock-utilities-3.0.2.pom"
 install_pom "org/forgerock/commons/forgerock-audit/4.1.1/forgerock-audit-4.1.1.pom"
 install_pom "org/forgerock/commons/forgerock-rest/4.0.3/forgerock-rest-4.0.3.pom"
 install_pom "org/forgerock/commons/i18n-framework/1.4.1/i18n-framework-1.4.1.pom"
 install_pom "org/forgerock/http/forgerock-http-framework-parent/3.0.1/forgerock-http-framework-parent-3.0.1.pom"
+install_pom "org/forgerock/http/forgerock-http-framework/3.0.0/forgerock-http-framework-3.0.0.pom"
 install_pom "org/forgerock/commons/forgerock-guice/1.1.0/forgerock-guice-1.1.0.pom"
 install_pom "org/forgerock/commons/forgerock-bom/1.0.0/forgerock-bom-1.0.0.pom"
 install_pom "org/forgerock/commons/i18n-framework/1.4.2/i18n-framework-1.4.2.pom"
 install_pom "org/forgerock/commons/forgerock-authn-filter/3.1.5/forgerock-authn-filter-3.1.5.pom"
 install_pom "org/forgerock/commons/forgerock-jaspi-modules/3.1.5/forgerock-jaspi-modules-3.1.5.pom"
+install_pom "org/forgerock/commons/ui/forgerock-ui/11.0.13/forgerock-ui-11.0.13.pom"
+install_pom "org/forgerock/commons/ui/forgerock-ui-mock/11.0.13/forgerock-ui-mock-11.0.13.pom"
 
 # No source JAR
 install_artifact "org/forgerock/forgerock-build-tools/1.0.3/forgerock-build-tools-1.0.3"
+install_artifact "org/forgerock/commons/forgerock-test-utils/3.0.1/forgerock-test-utils-3.0.1"
 install_artifact "org/forgerock/commons/forgerock-test-utils/3.0.2/forgerock-test-utils-3.0.2"
 install_artifact "org/forgerock/commons/json-web-token/3.0.2/json-web-token-3.0.2"
 install_artifact "org/forgerock/commons/forgerock-jaspi-openid-connect-module/3.1.5/forgerock-jaspi-openid-connect-module-3.1.5"
@@ -73,14 +79,17 @@ install_artifact "org/forgerock/commons/authz-framework-api/3.1.5/authz-framewor
 install_artifact "org/forgerock/commons/forgerock-persistit-core/4.3.1/forgerock-persistit-core-4.3.1"
 install_artifact "org/forgerock/commons/forgerock-bloomfilter-core/1.0.1/forgerock-bloomfilter-core-1.0.1"
 install_artifact "org/forgerock/commons/forgerock-bloomfilter-monitoring/1.0.1/forgerock-bloomfilter-monitoring-1.0.1"
+install_artifact "org/forgerock/commons/forgerock-util/3.0.1/forgerock-util-3.0.1"
 install_artifact "org/forgerock/commons/forgerock-util/3.0.2/forgerock-util-3.0.2"
 install_artifact "org/forgerock/commons/forgerock-audit-core/4.1.1/forgerock-audit-core-4.1.1"
 install_artifact "org/forgerock/commons/i18n-core/1.4.1/i18n-core-1.4.1" # No source of 1.4.1 but 1.4.2 does have source JAR.
+install_artifact "org/forgerock/http/chf-http-core/3.0.0/chf-http-core-3.0.0"
 install_artifact "org/forgerock/http/chf-http-core/3.0.1/chf-http-core-3.0.1"
 install_artifact "org/forgerock/http/chf-http-servlet/3.0.1/chf-http-servlet-3.0.1"
 install_artifact "org/forgerock/http/chf-client-apache-sync/3.0.1/chf-client-apache-sync-3.0.1"
 install_artifact "org/forgerock/http/chf-client-apache-common/3.0.1/chf-client-apache-common-3.0.1"
 install_artifact "org/forgerock/commons/forgerock-guice-core/1.1.0/forgerock-guice-core-1.1.0"
+install_artifact "org/forgerock/commons/forgerock-guice-servlet/1.1.0/forgerock-guice-servlet-1.1.0"
 install_artifact "org/forgerock/commons/json-resource-http/4.0.3/json-resource-http-4.0.3" 
 install_artifact "org/forgerock/commons/i18n-core/1.4.2/i18n-core-1.4.2"
 install_artifact "org/forgerock/commons/i18n-slf4j/1.4.2/i18n-slf4j-1.4.2"
@@ -124,3 +133,7 @@ install_artifact "org/forgerock/commons/guava/forgerock-guava-net/18.0.3/forgero
 install_artifact "org/forgerock/commons/guava/forgerock-guava-primitives/18.0.3/forgerock-guava-primitives-18.0.3"
 install_artifact "org/forgerock/commons/guava/forgerock-guava-reflect/18.0.3/forgerock-guava-reflect-18.0.3"
 
+
+# Zip files
+install_artifact "org/forgerock/commons/ui/forgerock-ui-commons/11.0.13/forgerock-ui-commons-11.0.13" "zip" "www"
+install_artifact "org/forgerock/commons/ui/forgerock-ui-user/11.0.13/forgerock-ui-user-11.0.13" "zip" "www"
